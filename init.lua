@@ -12,7 +12,7 @@
 
 cst = {}
 
-cst.version = 1.0
+cst.version = 1.1
 cst.modname = minetest.get_current_modname();
 
 cst.S = minetest.get_translator(minetest.get_current_modname())
@@ -26,6 +26,7 @@ cst.colors = {
                      {"green", "#00FF00", S("green"),100},
                      {"blue", "#0000FF", S("blue"),100},
                      {"magenta", "#FF00FF", S("magenta"),100},
+                     {"red", "#FF0000", S("red"),100},
                      {"cyan", "#00FFFF", S("cyan"),100},
                      {"brown", "#6D2400", S("brown"),100},
                      {"black", "#000000", S("black"),100},
@@ -51,6 +52,28 @@ for key,color in pairs(cst.colors) do
         sounds = default.node_sound_stone_defaults(),
 	})
 
+    minetest.register_node("colored_stone:stonebrick_" .. color[1], {
+        description = S("Stone Brick") .. " " .. color[3],
+        paramtype2 = "facedir",
+        place_param2 = 0,
+        tiles = {"default_stone_brick.png^[colorize:" .. color[2] .. ":" .. color[4]},
+        is_ground_content = false,
+        groups = {cracky = 2, stone = 1},
+        sounds = default.node_sound_stone_defaults(),
+    })
+
+    minetest.register_node("colored_stone:stone_block_" .. color[1], {
+        description = S("Stone Block") .. " " .. color[3],
+        tiles = {"default_stone_block.png^[colorize:" .. color[2] .. ":" .. color[4]},
+        is_ground_content = false,
+        groups = {cracky = 2, stone = 1},
+        sounds = default.node_sound_stone_defaults(),
+    })
+
+--[[
+        Recipes
+]]
+
     minetest.register_craft({
         output = "colored_stone:cobble_" .. color[1],
         recipe = {	{"default:cobble", "dye:" .. color[1], ""} },
@@ -62,6 +85,36 @@ for key,color in pairs(cst.colors) do
     })
 
     minetest.register_craft({
+        output = "colored_stone:stonebrick_" .. color[1],
+        recipe = {	{"default:stonebrick", "dye:" .. color[1], ""} },
+    })
+
+    minetest.register_craft({
+        output = "colored_stone:stonebrick_" .. color[1] .. " 4",
+        recipe = {
+            {"colored_stone:stone_" .. color[1], "colored_stone:stone_" .. color[1]},
+            {"colored_stone:stone_" .. color[1], "colored_stone:stone_" .. color[1]},
+        }
+    })
+
+    minetest.register_craft({
+        output = "colored_stone:stone_block_" .. color[1],
+        recipe = {	{"default:stone_block", "dye:" .. color[1], ""} },
+    })
+
+minetest.register_craft({
+	output = "colored_stone:stone_block_" .. color[1] .. " 9",
+	recipe = {
+		{"colored_stone:stone_" .. color[1], "colored_stone:stone_" .. color[1], "colored_stone:stone_" .. color[1]},
+		{"colored_stone:stone_" .. color[1], "colored_stone:stone_" .. color[1], "colored_stone:stone_" .. color[1]},
+		{"colored_stone:stone_" .. color[1], "colored_stone:stone_" .. color[1], "colored_stone:stone_" .. color[1]},
+	}
+})
+
+--[[
+        Cooking Recipes
+]]
+    minetest.register_craft({
         type = "cooking",
         output = "default:stone",
         recipe = "colored_stone:cobble_" .. color[1],
@@ -72,4 +125,17 @@ for key,color in pairs(cst.colors) do
         output = "default:stone",
         recipe = "colored_stone:stone_" .. color[1],
     })
+
+    minetest.register_craft({
+        type = "cooking",
+        output = "default:stonebrick",
+        recipe = "colored_stone:stonebrick" .. color[1],
+    })
+
+    minetest.register_craft({
+        type = "cooking",
+        output = "default:stone_block",
+        recipe = "colored_stone:stone_block" .. color[1],
+    })
+
 end

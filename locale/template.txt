@@ -5,11 +5,14 @@
 
 Cobblestone=
 Stone=
+Stone Block=
+Stone Brick=
 black=
 blue=
 brown=
 cyan=
 green=
 magenta=
+red=
 white=
 yellow=
