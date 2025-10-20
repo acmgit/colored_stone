@@ -1,0 +1,15 @@
+# textdomain: colored_stone
+
+
+### init.lua ###
+
+Cobblestone=Kopfsteinpflaster
+Stone=Stein
+black=schwarz
+blue=blau
+brown=braun
+cyan=cyan
+green=grün
+magenta=pink
+white=weiss
+yellow=gelb

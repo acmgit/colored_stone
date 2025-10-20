@@ -1,0 +1,15 @@
+# textdomain: colored_stone
+
+
+### init.lua ###
+
+Cobblestone=
+Stone=
+black=
+blue=
+brown=
+cyan=
+green=
+magenta=
+white=
+yellow=

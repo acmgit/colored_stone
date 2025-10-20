@@ -1,2 +1,2 @@
-# stone-colored
-A mod for minetest, who provides colored stones.
+# colored_stone
+A mod for minetest, wich provides colored stones.
