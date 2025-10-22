@@ -3,10 +3,6 @@
 
 ### init.lua ###
 
-Cobblestone=
-Stone=
-Stone Block=
-Stone Brick=
 black=
 blue=
 brown=
@@ -16,3 +12,10 @@ magenta=
 red=
 white=
 yellow=
+
+### nodes.lua ###
+
+Cobblestone=
+Stone=
+Stone Block=
+Stone Brick=

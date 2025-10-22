@@ -3,10 +3,6 @@
 
 ### init.lua ###
 
-Cobblestone=Kopfsteinpflaster
-Stone=Stein
-Stone Block=Steinblock
-Stone Brick=Steinziegel
 black=schwarz
 blue=blau
 brown=braun
@@ -16,3 +12,10 @@ magenta=pink
 red=rot
 white=weiss
 yellow=gelb
+
+### nodes.lua ###
+
+Cobblestone=Kopfsteinpflaster
+Stone=Stein
+Stone Block=Steinblock
+Stone Brick=Steinziegel
