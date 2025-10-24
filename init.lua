@@ -39,4 +39,4 @@ dofile(modpath .. "/nodes.lua")
 dofile(modpath .. "/recipes.lua")
 dofile(modpath .. "/register_mods.lua")
 
-minetest.log("info", "[MOD] " .. modname .. " Version " .. cst.version .. " loaded.")
+minetest.log("info", "[MOD] " .. cst.modname .. " Version " .. cst.version .. " loaded.")
