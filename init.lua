@@ -13,7 +13,7 @@ colored_stone = {}
 
 local cst = colored_stone
 
-cst.version = 1.4
+cst.version = 1.5
 cst.modname = minetest.get_current_modname();
 
 cst.S = minetest.get_translator(minetest.get_current_modname())
