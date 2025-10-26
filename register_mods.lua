@@ -69,10 +69,10 @@ if(minetest.get_modpath("technic_cnc")) then
                                         minetest.registered_nodes[modname .. ":stonebrick_" .. color[1]].tiles,
                                         minetest.registered_nodes[modname .. ":stonebrick_" .. color[1]].description)
 
-                technic_cnc.register_all(modname .. ":stoneblock_" .. color[1],
-                                        minetest.registered_nodes[modname .. ":stoneblock_" .. color[1]].groups,
-                                        minetest.registered_nodes[modname .. ":stoneblock_" .. color[1]].tiles,
-                                        minetest.registered_nodes[modname .. ":stoneblock_" .. color[1]].description)
+                technic_cnc.register_all(modname .. ":stone_block_" .. color[1],
+                                        minetest.registered_nodes[modname .. ":stone_block_" .. color[1]].groups,
+                                        minetest.registered_nodes[modname .. ":stone_block_" .. color[1]].tiles,
+                                        minetest.registered_nodes[modname .. ":stone_block_" .. color[1]].description)
         end
 
 end
