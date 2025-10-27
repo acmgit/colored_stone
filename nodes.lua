@@ -1,6 +1,6 @@
 local cst = colored_stone
 local S = cst.S
-
+local amount = 4
 cst.nodes = {}
 
 for _,color in pairs(cst.colors) do
@@ -50,17 +50,17 @@ for _,color in pairs(cst.colors) do
 ]]
 
     minetest.register_craft({
-        output = "colored_stone:cobble_" .. color[1],
+        output = "colored_stone:cobble_" .. color[1] .. " " .. amount,
         recipe = {	{"default:cobble", "dye:" .. color[1], ""} },
     })
 
     minetest.register_craft({
-        output = "colored_stone:stone_" .. color[1],
+        output = "colored_stone:stone_" .. color[1].. " " .. amount,
         recipe = {	{"default:stone", "dye:" .. color[1], ""} },
     })
 
     minetest.register_craft({
-        output = "colored_stone:stonebrick_" .. color[1],
+        output = "colored_stone:stonebrick_" .. color[1].. " " .. amount,
         recipe = {	{"default:stonebrick", "dye:" .. color[1], ""} },
     })
 
@@ -73,7 +73,7 @@ for _,color in pairs(cst.colors) do
     })
 
     minetest.register_craft({
-        output = "colored_stone:stone_block_" .. color[1],
+        output = "colored_stone:stone_block_" .. color[1].. " " .. amount,
         recipe = {	{"default:stone_block", "dye:" .. color[1], ""} },
     })
 
